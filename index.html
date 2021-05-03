@@ -1,0 +1,83 @@
+<!DOCTYPE html
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container">
+                <span class="navbar-brand mb-0 h1">Guest Book</span>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="d-flex align-items-center mb-2 mt-2">
+                <input type="text" class="form-control" id="task-input" placeholder="Enter a task here">
+                <button type="button" id="add" class="btn btn-primary ms-1 text-nowrap"><i class="bi bi-plus"></i>
+                    Add</button>
+            </div>
+            <div class="d-flex">
+                <div class="flex-grow-1 bg-light rounded-2 p-2 me-1 w-50">
+                    <h3>Names</h3>
+                    <div id="todo-list">
+                        <div class="task bg-light p-1 rounded-2 ps-2">Sample name</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let button = document.querySelector("#add");
+    
+            button.addEventListener("click", () => {
+                // 1. Read the text in #task-input.
+                let input = document.querySelector("#task-input");
+                let task = input.value;
+    
+                if (!task.length) return;
+                // 2. Append the text to #todo-list.
+                let newTask = document.createElement("div");
+                newTask.classList.add("task", "bg-light", "p-1", "rounded-2", "ps-2");
+                newTask.textContent = task;
+    
+                let todoList = document.querySelector("#todo-list");
+                todoList.appendChild(newTask);
+    
+                // 3. Clear #task-input.
+                input.value = "";
+            })
+    
+        </script>
+
+        <title>My Profile</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>My Profile</h1>
+        <p>Hello, I am <strong>Yejun Kim</strong>. You can call me <strong>John Kim</strong>.<br /> I really like cats; they are <em>awesome</em>!</p>
+        <img src="cat.jpg" alt="this is an image of my cat" width="300" />
+        <div>
+            <div class="cats">This is a cute cat!!!</div>
+        </div>
+        <h2>Useful Links</h2>
+        <ul>
+            <li><a href="https://www.google.com">Google</a></li>
+            <li><a href="https://www.github.com">Github</a></li>
+            <li><a href="http://eportal.skku.edu/">Portal</a></li>
+        </ul>
+        <h2>My Schedule</h2>
+        <table>
+            <tr>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        <tr>
+            <td><div class="extrm">BURNING!!!</div></td>
+            <td><div class="good">FUN! PLAY!</div></td>
+            <td><div class="yaya">Relax</div></td>
+        </tr>
+        </table>
+        <h3>Where to contact</h3>
+        <ol>
+            <li>Email: yejunhahope@naver.com</li>
+            <li>Github: JohnKIMMI</li>
+        </ol>
+    </body>
+</html>
